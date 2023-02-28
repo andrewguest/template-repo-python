@@ -20,6 +20,16 @@ jobs:
           options: "--check --diff --color"
           jupyter: true
 
+  flake8-lint:
+    runs-on: ubuntu-latest
+    name: Flake8 checks
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+
   python-isort:
     name: Fomat code with isort
     runs-on: ubuntu-latest
